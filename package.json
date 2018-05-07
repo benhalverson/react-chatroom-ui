@@ -16,8 +16,11 @@
     "server": "nodemon src/server/server.js",
     "test": "react-scripts test --env=jsdom",
     "styles": "sass --watch --style compressed src/App.scss:src/App.css",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
+  "homepage": "http://github.com/benhalverson/react-chatroom-ui",
   "devDependencies": {
     "eslint": "4.19.1",
     "eslint-config-airbnb": "16.1.0",

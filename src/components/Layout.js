@@ -4,7 +4,7 @@ import LoginForm from './LoginForm';
 import ChatContainer from './chat/ChatContainer';
 import { USER_CONNECTED, LOGOUT } from '../Constants';
 
-const serverURI = `process.env.REACT_APP_SERVER:process.env.PORT` || 'localhost:3231';
+const serverURI = `http://45.55.150.146:3231`;
 
 
 export default class Layout extends Component {
