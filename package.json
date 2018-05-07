@@ -13,6 +13,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "server": "nodemon src/server/server.js",
     "test": "react-scripts test --env=jsdom",
     "styles": "sass --watch --style compressed src/App.scss:src/App.css",
     "eject": "react-scripts eject"

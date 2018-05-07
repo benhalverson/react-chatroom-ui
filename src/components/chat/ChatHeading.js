@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 export default class ChatHeading extends Component {
   render() {
     const { name, online, numberOfUsers} = this.props;
@@ -16,4 +16,10 @@ export default class ChatHeading extends Component {
       </div>
     );
   }
+}
+
+ChatHeading.propTypes = {
+  name: PropTypes.string.isRequired,
+  online: PropTypes.string.isRequired,
+  numberOfUsers: PropTypes.number.isRequired
 }

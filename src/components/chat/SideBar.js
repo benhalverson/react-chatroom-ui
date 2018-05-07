@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 export default class SideBar extends Component {
   render() {
     const { chats, activeChat, user, setActiveChat, logout} = this.props
@@ -27,7 +27,7 @@ export default class SideBar extends Component {
             chats.map(chat => {
               if(chat.name) {
                 const lastMessage = chat.messages[chat.messages.length - 1];
-                const user = chat.users.find(({name}) => name !== this.props.name) || { name: 'Community' };
+                const user = chat.users.find(({name}) => name !== this.props.name) || { name: '' };
                 const classNames = activeChat && activeChat.id === chat.id ? 'active' : '';
                 return (
                   <div
@@ -37,7 +37,6 @@ export default class SideBar extends Component {
                       setActiveChat(chat);
                     } }
                   >
-                    <div className="user-photo">{user.name[0].toUpperCase()}</div>
                     <div className="user-info">
                       <div className="name">{user.name}</div>
                       {lastMessage && <div className="last-message">{lastMessage.message}</div>}
@@ -63,4 +62,12 @@ export default class SideBar extends Component {
       </div>
     );
   }
+}
+
+SideBar.propTypes = {
+  chats: PropTypes.array.isRequired,
+  activeChat: PropTypes.function,
+  user: PropTypes.string.isRequired,
+  setActiveChat: PropTypes.function,
+  logout: PropTypes.string.isRequired
 }
