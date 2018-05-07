@@ -3,22 +3,22 @@ import React, { Component } from 'react';
 export default class Messages extends Component {
   constructor(props) {
     super(props);
-    this.scrollDown = this.scrollDown.bind(this);
+    // this.scrollDown = this.scrollDown.bind(this);
   }
   /**
    * Scrolls down the view of the messages.
    */
-  scrolldown() {
+  scrolldown = () => {
     const {container} = this.refs;
     container.scrollTop = container.scrollHeight;
   }
 
-  componentDidUpdate(newProps) {
-    this.scrollDown();
-  }
+  componentDidUpdate(prevProps, prevState) {
+		// this.scrollDown()
+	}
 
   componentDidMount() {
-    this.scrollDown();
+    // this.scrollDown();
   }
 
   render() {

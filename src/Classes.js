@@ -1,32 +1,109 @@
-import uuidv4 from 'uuid';
+const uuidv4 = require('uuid/v4')
 
-export default class UtilityMethods {
-  createUser({uuid = uuidv4(), name}) {
-    return { uuid, name};
-  }
+/*
+*	createUser
+*	Creates a user.
+*	@prop id {string}
+*	@prop name {string}
+*	@param {object} 
+*		name {string}
+*/
+const createUser = ({name = ""} = {})=>(
+	{
+		id:uuidv4(),
+		name
+		
+	}
+)
 
-  createMessage({message, sender}) {
-    return {
-      id: uuidv4(),
-      time: this.getTime(new Date(Date.now())),
-      message,
-      sender
-    };
-  }
+/*
+*	createMessage
+*	Creates a messages object.
+* 	@prop id {string}
+* 	@prop time {Date} the time in 24hr format i.e. 14:22
+* 	@prop message {string} actual string message
+* 	@prop sender {string} sender of the message
+*	@param {object} 
+*		message {string}
+*		sender {string}
+*/
+const createMessage = ({message = "", sender = ""} = { })=>(
+		{
+			id:uuidv4(),
+			time:getTime(new Date(Date.now())),
+			message,
+			sender	
+		}
 
-  createChat({messages = [], name = 'ASAPP Chat', users = []}) {
-    return {
-      id: uuidv4(),
-      name,
-      messages,
-      users,
-      typingUsers: [],
-      addMessage: (messages, message) => [...messages, message],
-      addTypingUser: (typingUsers, username) => [...typingUsers, username],
-      removeTypingUser: (typingUsers, username) => typingUsers.filter(user => user === username)
-    };
-  }
-  getTime(date) {
-    return `${date.getHours()}:${`0${date.getMinutes()}`.slice(-2)}`;
-  }
+	)
+
+/*
+*	createChat
+*	Creates a Chat object
+* 	@prop id {string}
+* 	@prop name {string}
+* 	@prop messages {Array.Message}
+* 	@prop users {Array.string}
+*	@param {object} 
+*		messages {Array.Message}
+*		name {string}
+*		users {Array.string}
+* 
+*/
+const createChat = ({messages = [], name = "Community", users = []} = {})=>(
+	{
+		id:uuidv4(),
+		name,
+		messages,
+		users,
+		typingUsers:[]
+	}
+)
+
+
+/*
+*	@param date {Date}
+*	@return a string represented in 24hr time i.e. '11:30', '19:30'
+*/
+const getTime = (date)=>{
+	return `${date.getHours()}:${("0"+date.getMinutes()).slice(-2)}`
 }
+
+module.exports = {
+	createMessage,
+	createChat,
+	createUser
+}
+
+// import uuidv4 from 'uuid';
+
+// export default class UtilityMethods {
+//   createUser({uuid = uuidv4(), name}) {
+//     return { uuid, name};
+//   }
+
+//   createMessage({message, sender}) {
+//     return {
+//       id: uuidv4(),
+//       time: this.getTime(new Date(Date.now())),
+//       message,
+//       sender
+//     };
+//   }
+
+//   createChat({messages = [], name = 'ASAPP Chat', users = []}) {
+//     return {
+//       id: uuidv4(),
+//       name,
+//       messages,
+//       users,
+//       typingUsers: [],
+//       addMessage: (messages, message) => [...messages, message],
+//       addTypingUser: (typingUsers, username) => [...typingUsers, username],
+//       removeTypingUser: (typingUsers, username) => typingUsers.filter(user => user === username)
+//     };
+//   }
+//   getTime(date) {
+//     return `${date.getHours()}:${`0${date.getMinutes()}`.slice(-2)}`;
+//   }
+// }

@@ -4,7 +4,7 @@ import LoginForm from './LoginForm';
 import ChatContainer from './chat/ChatContainer';
 import { USER_CONNECTED, LOGOUT } from '../Constants';
 
-const serverURI = process.env.REACT_APP_SERVER || 'localhost:3000';
+const serverURI = process.env.REACT_APP_SERVER || 'localhost:3231';
 
 
 export default class Layout extends Component {
@@ -17,6 +17,7 @@ export default class Layout extends Component {
     };
 
     this.setUser = this.setUser.bind(this);
+    console.log(`setuser inside constructor ${this.setUser.bind(this)}`);
     this.logout = this.logout.bind(this);
     this.reconnectUserInfo = this.reconnectUserInfo.bind(this);
   }
