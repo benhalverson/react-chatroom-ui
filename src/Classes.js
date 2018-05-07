@@ -1,3 +1,4 @@
+/*eslint no-undef: "off"*/
 const uuidv4 = require('uuid/v4')
 
 /*
