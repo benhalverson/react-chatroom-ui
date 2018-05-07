@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import io from 'socket.io-client';
 import LoginForm from './LoginForm';
 import ChatContainer from './chat/ChatContainer';
+import { USER_CONNECTED, LOGOUT } from '../Constants';
 
 const serverURI = process.env.REACT_APP_SERVER || 'localhost:3000';
 
@@ -53,20 +54,25 @@ export default class Layout extends Component {
    * @param user object {id:number, name:string}
    */
   setUser(user) {
-
+    const { socket } = this.state;
+    this.setState({user});
+    socket.emit(USER_CONNECTED, user);
   }
 
   /**
    * set the user to null.
    */
   logout() {
-
+    const { socket } = this.state;
+    socket.emit(LOGOUT);
+    this.setState({user: null});
   }
   render() {
     const { user, socket } = this.state;
     return (
       <div className="container">
         { !user ? <LoginForm socket={socket} setUser={this.setUser} verified={ this.setUser }/> : <ChatContainer socket={socket} logout={this.logout} user={user}/>}
+        {/* <ChatContainer socket={socket} logout={this.logout} user={user}/> */}
       </div>
     );
   }
