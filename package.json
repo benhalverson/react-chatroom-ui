@@ -13,6 +13,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "styles": "sass --watch --style compressed src/App.scss:src/App.css",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
