@@ -1,4 +1,5 @@
 const io = require('./server.js').io
+io.origins('*:*');
 
 const { VERIFY_USER, USER_CONNECTED, USER_DISCONNECTED, 
 		LOGOUT, COMMUNITY_CHAT, MESSAGE_RECIEVED, MESSAGE_SENT,
@@ -12,7 +13,6 @@ let communityChat = createChat()
 
 module.exports = function(socket){
 					
-	// console.log('\x1bc'); //clears console
 	console.log("Socket Id:" + socket.id);
 
 	let sendMessageToChatFromUser;
@@ -129,5 +129,5 @@ function removeUser(userList, username){
 * @return userList {Object} Object with key value pairs of Users
 */
 function isUser(userList, username){
-  	return username in userList
+  return username in userList
 }
