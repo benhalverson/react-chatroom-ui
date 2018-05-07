@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import io from 'socket.io-client';
+import LoginForm from './LoginForm';
+import ChatContainer from './chat/ChatContainer';
+
 const serverURI = process.env.REACT_APP_SERVER || 'localhost:3000';
 
 
@@ -62,13 +65,9 @@ export default class Layout extends Component {
   render() {
     const { user, socket } = this.state;
     return (
-      `<div className="container">
-        {
-          !user ?
-           <LoginForm socket={socket} setUser={this.user} verified={this.setuser}/>
-           :
-          <ChatContainer socket={socket} logout={this.logout} user={user}}
-      </div>`
+      <div className="container">
+        { !user ? <LoginForm socket={socket} setUser={this.setUser} verified={ this.setUser }/> : <ChatContainer socket={socket} logout={this.logout} user={user}/>}
+      </div>
     );
   }
 }
