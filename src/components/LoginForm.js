@@ -40,7 +40,7 @@ export default class LoginForm extends Component {
     return (
       <div className='login'>
         <form onSubmit={this.handleSubmit} className='login-form'>
-          <label htmlForm='nickname'>
+          <label htmlFor='nickname'>
             <h1 style={{textAlign: 'center'}}>Got a nickname?</h1>
           </label>
           <input type='text' ref={input => {
