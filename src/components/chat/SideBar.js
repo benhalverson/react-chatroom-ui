@@ -1,3 +1,5 @@
+// 
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 export default class SideBar extends Component {
@@ -6,7 +8,7 @@ export default class SideBar extends Component {
     return (
       <div id="side-bar">
         <div className="heading">
-          <div className="app-name">ASAPP Chat</div>
+          <div className="app-name">Reactn</div>
           <div className="menu">
           Menu
           </div>

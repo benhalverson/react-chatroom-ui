@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 export default class Messages extends Component {
-  constructor(props) {
-    super(props);
-    // this.scrollDown = this.scrollDown.bind(this);
-  }
+  // constructor(props) {
+  //   super(props);
+  //   // this.scrollDown = this.scrollDown.bind(this);
+  // }
   /**
    * Scrolls down the view of the messages.
    */

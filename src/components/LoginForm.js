@@ -1,3 +1,5 @@
+// Component for the Login Form
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { VERIFY_USER } from '../Constants';

@@ -1,4 +1,6 @@
-Reactn - A React and Socket.io based chat app by Ben Halverson
+#Reactn
+
+## A React and Socket.io based chat app by Ben Halverson
 
 ## Front-end 
 - react.js
