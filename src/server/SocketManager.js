@@ -42,7 +42,7 @@ module.exports = function(socket){
 	})
 	
 	//User disconnects
-	socket.on('disconnect', ()=>{
+	socket.on(USER_DISCONNECTED, ()=>{
 		if("user" in socket){
 			connectedUsers = removeUser(connectedUsers, socket.user.name)
 
