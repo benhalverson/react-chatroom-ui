@@ -7,17 +7,18 @@ $primary-color-dark: #2e2e4f;
 $primary-color-light: #5d5d8a;
 $primary-color-active: #363656;
 $secondary-color: #484d79;
+$white: #ffffff;
 
 // Text and UI Colors
 
 $main-text-color: #cac8ee;
 $error-text: #c92c43;
 
-$sent-message-color: #fff;
+$sent-message-color: $white;
 $sent-message-bg-color: #89a1fc;
 
 $received-message-color: #b3b2ca;
-$received-message-bg-color: #fff;
+$received-message-bg-color: $white;
 
 $messages-bg: #dcddf5;
 
@@ -35,3 +36,13 @@ $head-max-height:65px;
 
 $footer-max-height:65px;
 $footer-height:10vh;
+
+$form-control-padding: 24px;
+
+$form-control-padding-top: $form-control-padding;
+$form-control-padding-bottom: $form-control-padding;
+$form-control-padding-left: $form-control-padding / 1.5;
+
+$message-form: 100%
+$message-form-height: $message-form;
+$message-form-width: $message-form;
