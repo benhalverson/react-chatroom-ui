@@ -5,7 +5,7 @@
   "frontend": {
     "name": "Reactn: A React and Socket.io based chat app by Ben Halverson",
     "javascripts": "src/components",
-    "stylesheets": "src"
+    "stylesheets": "src/scss"
   },
   "dependencies": {
     "react": "^16.3.2",

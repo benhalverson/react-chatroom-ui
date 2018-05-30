@@ -3,8 +3,9 @@
 # dependencies
 /node_modules
 
-# generated css
+# sass scss css
 /src/css
+.sass-cache
 
 # testing
 /coverage
