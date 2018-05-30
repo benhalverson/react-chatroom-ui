@@ -1,7 +1,12 @@
 {
-  "name": "simple-chat",
-  "version": "0.1.0",
+  "name": "reactn",
+  "version": "1.0.0",
   "private": true,
+  "frontend": {
+    "name": "Reactn: A React and Socket.io based chat app by Ben Halverson",
+    "javascripts": "src/components",
+    "stylesheets": "src/scss"
+  },
   "dependencies": {
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
@@ -15,7 +20,7 @@
     "build": "react-scripts build",
     "server": "nodemon src/server/server.js",
     "test": "react-scripts test --env=jsdom",
-    "styles": "sass --watch --style compressed src/App.scss:src/App.css",
+    "styles": "sass --watch --style compressed src/scss/app.scss:src/css/app.css",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
@@ -27,6 +32,7 @@
     "eslint-plugin-import": "2.11.0",
     "eslint-plugin-jsx-a11y": "6.0.3",
     "eslint-plugin-node": "6.0.1",
-    "eslint-plugin-react": "7.7.0"
+    "eslint-plugin-react": "7.7.0",
+    "nodemon": "^1.17.5"
   }
 }

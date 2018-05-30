@@ -1,0 +1,37 @@
+// Color and Spacing Variables / Tokens
+
+// Primary Colors
+
+$primary-color: #3e3e5e;
+$primary-color-dark: #2e2e4f;
+$primary-color-light: #5d5d8a;
+$primary-color-active: #363656;
+$secondary-color: #484d79;
+
+// Text and UI Colors
+
+$main-text-color: #cac8ee;
+$error-text: #c92c43;
+
+$sent-message-color: #fff;
+$sent-message-bg-color: #89a1fc;
+
+$received-message-color: #b3b2ca;
+$received-message-bg-color: #fff;
+
+$messages-bg: #dcddf5;
+
+$success-color: #60d66a;
+
+
+// Spacing
+
+$main-padding-vertical:18px;
+$main-padding-horizontal:16px;
+$main-padding: $main-padding-vertical $main-padding-horizontal;
+
+$head-height:12vh;
+$head-max-height:65px;
+
+$footer-max-height:65px;
+$footer-height:10vh;

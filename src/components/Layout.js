@@ -1,3 +1,5 @@
+// General Layout Component
+
 import React, { Component } from 'react';
 import io from 'socket.io-client';
 import LoginForm from './LoginForm';
@@ -42,7 +44,7 @@ export default class Layout extends Component {
    * If the username is already logged in.
    */
   reconnectUserInfo() {
-    const { socket, user} = this.state;
+    // const { socket, user} = this.state;
 
     if(this.state.user !== null) {
       // socket.emit(USER_CONNECTED, user);

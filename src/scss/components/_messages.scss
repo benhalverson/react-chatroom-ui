@@ -1,0 +1,143 @@
+// Message Containers, Messages and Threads
+
+/* JMS Line 42 - this looks like copy and pasted Scss. Refactor the var names and remote triangle ref */
+/* JMS Line 56 - This is too much nesting */
+/* JMS Line 72 - see comment above. If nothing else var should be scoped differently to avoid repetition of definition */
+
+.message-container {
+  display: flex;
+  justify-content: flex-start;
+  min-height: 50px;
+  margin:10px 15px;
+  $message-triangle-offset:-7px;
+  animation: .65s ease-out 0s show;
+  .time { order:1; }
+  .data {
+    order:2;
+    height:100%;
+    margin-left:25px;
+  }
+  .name {
+    font-size: .65em;
+    margin-top: 5px;
+    text-align: right;
+  }
+  .message {
+    background: $received-message-bg-color;
+    border-radius: 5px;
+    border-top-left-radius: 0;
+    box-sizing: border-box;
+    color: $received-message-color;     
+    height:100%;
+    padding: 10px 15px;
+    position: relative;
+  }
+  @keyframes show {
+    0% { opacity: 0 }
+    100% { opacity: 1; }
+  }
+
+  .message::before {
+    $triangle-color: $received-message-bg-color; 
+    content:'';
+    height: 0;
+    left: $message-triangle-offset;
+    position: absolute;
+    top:0;
+    width: 0;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: $triangle-color;
+    border-style:solid;
+    border-top-color:  $triangle-color;
+    border-width: 4px;
+
+    &.right {
+      text-align: right;
+      justify-content: flex-end;
+      .time { order:2; margin-left: 25px; }
+      .name { display: none; }
+      .data {
+        margin-left: 0;
+        order:1;
+      }
+      .message {
+        background: $sent-message-bg-color;
+        color: $sent-message-color;
+        border-top-right-radius: 0;
+        border-top-left-radius: 5px;
+      }
+      .message::before {
+        $triangle-color: $sent-message-bg-color;
+        left:auto;
+        right: $message-triangle-offset;
+        border-top-color:  $triangle-color;
+        border-left-color:  $triangle-color;
+        border-right-color: transparent;
+      }
+    }
+  }
+
+  .typing-user {
+    text-align: right;
+    margin: 10px 15px;
+  }
+
+  .message-input {
+    background:white;
+    color: $secondary-color;
+    box-sizing: border-box;
+    height:$footer-height;
+    max-height:  $footer-max-height;
+    .message-form {
+      height:100%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      .form-control {
+        @include customscrollbar();
+        padding-top: 24px;
+        padding-bottom: 24px;
+        resize:none;
+        padding-left: 15px;
+        box-sizing: border-box;
+        width: 80%;
+        height: 100%;
+        border:none;
+        &:focus { outline:none; }
+      }
+      .send {
+        width: 20%;
+        box-sizing: border-box;
+        font-size: 1.25em;
+        text-align: center;
+        border:none;
+        height:100%;
+        color: $sent-message-color;
+        background: $primary-color;
+        transition:all .35s ease-out;
+        &:disabled {
+          opacity: .2;
+          background:  $primary-color-light;
+        }
+      }
+    }
+  }
+
+  .thread-container {
+    flex-grow:1;
+    @include customscrollbar();
+    overflow-y: scroll;
+    position: relative;
+    .thread {
+      position: relative;
+      width: 100%;
+      min-height: 800px;
+      display:flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      color: $received-message-color;
+      background: $messages-bg;
+    }
+  }
+}

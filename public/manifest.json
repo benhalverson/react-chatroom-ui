@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Reactn",
+  "name": "Reactn: A React and Socket.io based chat app by Ben Halverson",
   "icons": [
     {
       "src": "favicon.ico",

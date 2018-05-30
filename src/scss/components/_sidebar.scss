@@ -1,0 +1,87 @@
+// Sidebar for React component: components/chat/SideBar.js
+
+// JMS - prefer class vs id if possible exception is #root
+// JMS - this is too complex and too much nesting below, exploded
+
+#side-bar {
+  box-sizing: border-box;
+  width:33.75%;
+  height: 100%;
+  display:flex;
+  justify-content:space-around;
+  flex-direction:column;
+}
+
+#side-bar .heading {
+  box-sizing: border-box;
+  height:$head-height;
+  max-height:$head-max-height;
+  padding: $main-padding;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:space-between;
+  background: $primary-color-dark;
+}
+
+#side-bar .search {
+  background: $primary-color;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-width: 1px 0;
+  border-style: solid;
+  border-color: black;
+  padding-left: 15px;
+  padding-right: 20px;
+  height:10vh;
+  max-height: $head-max-height;
+  .search-icon {
+    margin-right: 15px;
+    cursor: pointer;
+  }
+
+  input {
+    width: 100%;
+    background: $primary-color;
+    flex-grow: 1;
+    box-sizing:border-box;
+    border:none;
+    color: $main-text-color;        
+    &:focus { outline:none; }
+    &::placeholder {
+      color: $main-text-color;
+      opacity: .6;
+    }                     
+  }
+
+  .plus {
+    $plus-width:2px;
+    $plus-length:16px;
+    display: inline-block;
+    position: relative;
+    cursor:pointer;
+    width:13px;
+    height:13px;
+
+    &::after, &::before {
+      content:'';
+      position: absolute;
+      background:  $received-message-color;
+
+    }
+    &::after {
+      width: $plus-length;
+      height: $plus-width;
+      top:5px;
+    }
+    &::before {
+      width: $plus-width;
+      height: $plus-length;
+      top:-2px;
+      left:7px;
+    }
+  }
+}

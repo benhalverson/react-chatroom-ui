@@ -1,3 +1,5 @@
+// A single chat message displayed on screen
+
 import React, { Component } from 'react';
 import SideBar from './SideBar';
 import Messages from '../messaging/Messages';
