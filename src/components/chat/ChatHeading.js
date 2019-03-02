@@ -4,14 +4,14 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 export default class ChatHeading extends Component {
   render() {
-    const { name, online, numberOfUsers} = this.props;
+    const { name, online, numberOfUsers } = this.props;
     const onlineText = online ? 'online' : 'offline';
     return (
-      <div className='chat-header'>
-        <div className='user-info'>
+      <div className="chat-header">
+        <div className="user-info">
           <div className="user-name">{name}</div>
           <div className="status">
-            <div className={`indicator ${onlineText}`}></div>
+            <div className={`indicator ${onlineText}`} />
             <span>{numberOfUsers ? numberOfUsers : null} online</span>
           </div>
         </div>
@@ -24,4 +24,4 @@ ChatHeading.propTypes = {
   name: PropTypes.string.isRequired,
   online: PropTypes.string.isRequired,
   numberOfUsers: PropTypes.number.isRequired
-}
+};

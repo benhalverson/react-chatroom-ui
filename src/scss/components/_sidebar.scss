@@ -5,22 +5,22 @@
 
 #side-bar {
   box-sizing: border-box;
-  width:33.75%;
+  width: 33.75%;
   height: 100%;
-  display:flex;
-  justify-content:space-around;
-  flex-direction:column;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
 }
 
 #side-bar .heading {
   box-sizing: border-box;
-  height:$head-height;
-  max-height:$head-max-height;
+  height: $head-height;
+  max-height: $head-max-height;
   padding: $main-padding;
-  display:flex;
+  display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content:space-between;
+  justify-content: space-between;
   background: $primary-color-dark;
 }
 
@@ -36,7 +36,7 @@
   border-color: black;
   padding-left: 15px;
   padding-right: 20px;
-  height:10vh;
+  height: 10vh;
   max-height: $head-max-height;
   .search-icon {
     margin-right: 15px;
@@ -47,41 +47,43 @@
     width: 100%;
     background: $primary-color;
     flex-grow: 1;
-    box-sizing:border-box;
-    border:none;
-    color: $main-text-color;        
-    &:focus { outline:none; }
+    box-sizing: border-box;
+    border: none;
+    color: $main-text-color;
+    &:focus {
+      outline: none;
+    }
     &::placeholder {
       color: $main-text-color;
-      opacity: .6;
-    }                     
+      opacity: 0.6;
+    }
   }
 
   .plus {
-    $plus-width:2px;
-    $plus-length:16px;
+    $plus-width: 2px;
+    $plus-length: 16px;
     display: inline-block;
     position: relative;
-    cursor:pointer;
-    width:13px;
-    height:13px;
+    cursor: pointer;
+    width: 13px;
+    height: 13px;
 
-    &::after, &::before {
-      content:'';
+    &::after,
+    &::before {
+      content: '';
       position: absolute;
-      background:  $received-message-color;
-
+      background: $received-message-color;
     }
     &::after {
       width: $plus-length;
       height: $plus-width;
-      top:5px;
+      top: 5px;
     }
     &::before {
       width: $plus-width;
       height: $plus-length;
-      top:-2px;
-      left:7px;
+      top: -2px;
+      left: 7px;
     }
   }
 }

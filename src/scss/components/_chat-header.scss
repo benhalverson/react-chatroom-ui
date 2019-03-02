@@ -4,24 +4,30 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height:$head-height;
-  max-height:$head-max-height;
+  height: $head-height;
+  max-height: $head-max-height;
   padding: 18px 16px;
   background: $primary-color-light;
-  box-shadow: 0px 6px 5px -2px rgba(225,225,225, .7);
+  box-shadow: 0px 6px 5px -2px rgba(225, 225, 225, 0.7);
   box-sizing: border-box;
 
   // JMS - This is probably too much nesting below. Do you really need .chat-header .user-info .status .online ? Maybe .chat-header .online or .chat-header .status .online
   .user-info {
-    align-items:center;
+    align-items: center;
     display: flex;
-    .user-name { margin-right: 10px; }
+    .user-name {
+      margin-right: 10px;
+    }
     .status {
-      $indicator-size:8px;
-      align-items:center;
+      $indicator-size: 8px;
+      align-items: center;
       display: flex;
-      .online { $indicator-color:#32b0bb; } // JMS - prefer Scss vars instead of hard coded values
-      .offline { $indicator-color:#C63D2C }
+      .online {
+        $indicator-color: #32b0bb;
+      } // JMS - prefer Scss vars instead of hard coded values
+      .offline {
+        $indicator-color: #c63d2c;
+      }
     }
   }
 
@@ -30,8 +36,10 @@
     align-items: center;
     flex-direction: row;
     justify-content: space-around;
-    height:100%;
-    width:15%;
-    svg { cursor: pointer; }
+    height: 100%;
+    width: 15%;
+    svg {
+      cursor: pointer;
+    }
   }
 }
