@@ -16,9 +16,9 @@
     "uuidv4": "1.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start && server",
     "build": "react-scripts build",
-    "server": "nodemon src/server/server.js",
+    "server": "node src/server/server.js",
     "test": "react-scripts test --env=jsdom",
     "styles": "sass --watch --style compressed src/scss/app.scss:src/css/app.css",
     "eject": "react-scripts eject",
