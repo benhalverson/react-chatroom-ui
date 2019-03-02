@@ -20,8 +20,8 @@
     "build": "react-scripts build && npm run styles:prod",
     "start": "node src/server/server.js",
     "test": "react-scripts test --env=jsdom",
-    "styles": "sass --watch --style compressed src/scss/app.scss:src/css/app.css",
-    "styles:prod": "sass --style compressed src/scss/app.scss:src/css/app.css",
+    "styles": "sass --watch --style compressed src/scss/app.scss:public/css/app.css",
+    "styles:prod": "sass --style compressed src/scss/app.scss:public/css/app.css",
     "eject": "react-scripts eject"
   },
   "homepage": "http://github.com/benhalverson/react-chatroom-ui",
