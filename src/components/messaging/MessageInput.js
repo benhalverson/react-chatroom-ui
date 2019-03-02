@@ -15,39 +15,39 @@ export default class MessageInput extends Component {
     this.setState({ message: '' });
   };
 
-  sendMessage() {
+  sendMessage = () => {
     this.props.sendMessage(this.state.message);
     this.blur();
-  }
+  };
 
   componentWillUnmount() {
     this.stopCheckingTyping();
   }
 
-  sendTyping() {
+  sendTyping = () => {
     this.lastUpdateTime = Date.now();
     if (!this.state.isTyping) {
       this.setState({ isTyping: true });
       this.props.sendTyping(true);
       this.startCheckingTyping();
     }
-  }
+  };
 
-  startCheckingTyping() {
+  startCheckingTyping = () => {
     this.typingInterval = setInterval(() => {
       if (Date.now() - this.lastUpdateTime > 300) {
         this.setState({ isTyping: false });
         this.stopCheckingTyping();
       }
     }, 300);
-  }
+  };
 
-  stopCheckingTyping() {
+  stopCheckingTyping = () => {
     if (this.typingInterval) {
       clearInterval(this.typingInterval);
       this.props.sendTyping(false);
     }
-  }
+  };
 
   blur = () => {
     this.refs.messageinput.blur();
