@@ -1,10 +1,12 @@
-/* eslint react/prop-types: 0 */
-
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 export default class SideBar extends Component {
+  constructor(props) {
+    super(props);
+    this.user = React.createRef();
+  }
   render() {
     const { chats, activeChat, user, setActiveChat, logout } = this.props;
+
     return (
       <div id="side-bar">
         <div className="heading">
@@ -18,7 +20,7 @@ export default class SideBar extends Component {
         </div>
         <div
           className="users"
-          ref="users"
+          ref={this.user}
           onClick={e => {
             e.target === this.refs.user && setActiveChat(null);
           }}
@@ -68,12 +70,3 @@ export default class SideBar extends Component {
     );
   }
 }
-
-// For some rason eslint thinks that line 75 and 77 have typos
-SideBar.propTypes = {
-  chats: PropTypes.array.isRequired,
-  activeChat: PropTypes.isRequired,
-  user: PropTypes.string.isRequired,
-  setActiveChat: PropTypes.isRequired,
-  logout: PropTypes.string.isRequired
-};
