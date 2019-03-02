@@ -71,18 +71,20 @@ export default class Layout extends Component {
   render() {
     const { user, socket } = this.state;
     return (
-      <div className="container">
-        {!user ? (
-          <LoginForm
-            socket={socket}
-            setUser={this.setUser}
-            verified={this.setUser}
-          />
-        ) : (
-          <ChatContainer socket={socket} logout={this.logout} user={user} />
-        )}
-        {/* <ChatContainer socket={socket} logout={this.logout} user={user}/> */}
-      </div>
+      <React.StrictMode>
+        <div className="container">
+          {!user ? (
+            <LoginForm
+              socket={socket}
+              setUser={this.setUser}
+              verified={this.setUser}
+            />
+          ) : (
+            <ChatContainer socket={socket} logout={this.logout} user={user} />
+          )}
+          {/* <ChatContainer socket={socket} logout={this.logout} user={user}/> */}
+        </div>
+      </React.StrictMode>
     );
   }
 }

@@ -72,8 +72,8 @@ export default class SideBar extends Component {
 // For some rason eslint thinks that line 75 and 77 have typos
 SideBar.propTypes = {
   chats: PropTypes.array.isRequired,
-  // activeChat: PropTypes.function,
+  activeChat: PropTypes.isRequired,
   user: PropTypes.string.isRequired,
-  // setActiveChat: PropTypes.function,
+  setActiveChat: PropTypes.isRequired,
   logout: PropTypes.string.isRequired
 };
